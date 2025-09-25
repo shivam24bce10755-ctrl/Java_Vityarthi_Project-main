@@ -1,162 +1,193 @@
-# Student Management System (Vityarthi Project)
+<h1 align="center">
+  <br>
+  Java Vityarthi Project – Student Management System
+  <br>
+</h1>
 
-[Repository](https://github.com/shivam24bce10755-ctrl/Java_Vityarthi_Project-main)
+<p align="center">
+  <a href="https://github.com/shivam24bce10755-ctrl/Java_Vityarthi_Project-main">
+    <img src="https://img.shields.io/badge/version-1.0-blue.svg" alt="Version">
+  </a>
+  <a href="https://github.com/shivam24bce10755-ctrl/Java_Vityarthi_Project-main/issues">
+    <img src="https://img.shields.io/github/issues/shivam24bce10755-ctrl/Java_Vityarthi_Project-main.svg" alt="Issues">
+  </a>
+  <a href="https://github.com/shivam24bce10755-ctrl/Java_Vityarthi_Project-main/stargazers">
+    <img src="https://img.shields.io/github/stars/shivam24bce10755-ctrl/Java_Vityarthi_Project-main.svg" alt="Stars">
+  </a>
+</p>
 
-![Java](https://img.shields.io/badge/Java-11%2B-blue) ![Build Status](https://github.com/shivam24bce10755-ctrl/Java_Vityarthi_Project-main/actions/workflows/java-ci.yml/badge.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
+<p align="center">
+  <a href="#project-statement">Project Statement</a> •
+  <a href="#key-features">Key Features</a> •
+  <a href="#requirements">Requirements</a> •
+  <a href="#how-to-run">Build & Run</a> •
+  <a href="#project-structure">Project Structure</a> •
+  <a href="#evolution-of-java">Evolution of Java</a> •
+  <a href="#java-platform-comparison">Java ME vs SE vs EE</a> •
+  <a href="#java-architecture">JDK, JRE, JVM</a> •
+  <a href="#mapping-syllabus-implementation">Mapping Syllabus → Implementation</a> •
+  <a href="#installation-on-windows">Install on Windows</a> •
+  <a href="#screenshots">Screenshots</a>
+</p>
 
 ---
 
-## Project Summary
+## Project Statement
 
-**Student Management System (Vityarthi Project)** is a console-based Java SE application for managing student records, courses, enrollments, and grades. The project demonstrates modern Java features and good coding practices: OOP, design patterns, exception handling, file I/O (NIO.2), Streams & lambdas, Date/Time API, generics and a modular package layout.
+Design and implement a console-based Java application called **Campus Course & Records Manager (CCRM)** that allows an institute to:
+
+* **Manage Students:** create, update, deactivate, view profiles, enroll/unenroll in courses.
+* **Manage Courses:** create, update, list, search, assign instructors.
+* **Manage Grades & Transcripts:** record marks, compute GPA, generate transcript views.
+* **File Utilities:** import/export CSV-like files, archive/backup course data, recursively compute backup directory size.
+
+This is a **Java SE project** that must use OOP principles (Encapsulation, Inheritance, Abstraction, Polymorphism), robust exception handling, modern I/O (NIO.2), Streams, Date/Time API, interfaces, abstract classes, enums, lambdas, recursion, and design patterns (Singleton & Builder).
 
 ---
 
 ## Key Features
 
-* Student CRUD (create, update, list, deactivate)
-* Course creation and search (by instructor, department, semester)
-* Enrollment with business-rule validation (credit limits, duplicate checks)
-* Grade recording, GPA calculation and transcript generation
-* CSV import/export and timestamped backups using NIO.2
-* Reports: GPA distribution, top students, enrollment statistics
-* Clean separation of concerns (cli, domain, service, io, util, config, exception)
+* **Student Management** – Add/list/update/deactivate students
+* **Course Management** – Add/list/update/search courses
+* **Enrollment & GPA** – Enroll/unenroll students with credit limit validation
+* **Grades & Transcripts** – Record marks, compute GPA, print transcripts
+* **File I/O Utilities** – CSV import/export, backup using NIO.2
+* **Stream API Reports** – GPA distribution, top students, enrollment stats
+* **CLI Menu** – Menu-driven interface with loops, switch-case, and recursion
 
 ---
 
-## Tech Stack
+## Requirements
 
-* Language: Java (11+ recommended)
-* Build / Run: javac / java (command-line) or any Java IDE (Eclipse, IntelliJ)
-* Storage: CSV files for sample data (in `data/`)
-* Patterns: Singleton, Builder (where applicable)
-* APIs used: Streams API, java.time, NIO.2
+* **JDK:** 11 or later (recommended JDK 17)
+* **OS:** Windows 10/11
+* **IDE:** Eclipse or IntelliJ IDEA
+
+---
+
+## How to Run
+
+```bash
+# Clone this repository
+git clone https://github.com/shivam24bce10755-ctrl/Java_Vityarthi_Project-main.git
+cd Java_Vityarthi_Project-main/Student\ Management\ System
+
+# Compile all Java files
+javac -cp . edu/ccrm/**/*.java Main.java
+
+# Run the program
+java Main
+```
 
 ---
 
 ## Project Structure
-
-Below is the repository layout (formatted from your screenshot):
 
 ```
 Java_Vityarthi_Project-main/
 ├── screenshots/
 │   ├── file_struct.png
 │   ├── java_check.png
-│   ├── menu_testing.png
-│   └── menu.png
+│   ├── menu.png
+│   └── menu_testing.png
 ├── Student Management System/
 │   ├── data/
 │   │   ├── courses.csv
 │   │   └── students.csv
-│   └── edu/
-│       └── ccrm/
-│           ├── cli/           # Command-line interface classes
-│           ├── config/        # Configuration management
-│           ├── domain/        # Domain models (Person, Student, Course, etc.)
-│           ├── exception/     # Custom business exceptions
-│           ├── io/            # Import/export & backup utilities (NIO.2)
-│           ├── service/       # Business logic / services
-│           └── util/          # Utility classes (reports, helpers)
-├── Main.java                   # Application entry point
+│   ├── edu/ccrm/
+│   │   ├── cli/
+│   │   ├── config/
+│   │   ├── domain/
+│   │   ├── exception/
+│   │   ├── io/
+│   │   ├── service/
+│   │   └── util/
+│   └── Main.java
 └── README.md
 ```
 
-> Note: When committing, ensure folder names with spaces are handled properly. If you prefer, you can rename `Student Management System` to `student-management-system` for easier cross-platform use.
+---
+
+## Evolution of Java
+
+* **1995:** Java 1.0 – Write once, run anywhere
+* **1998:** Java 2 – Collections Framework, Swing
+* **2004:** Java 5 – Generics, Enums, Annotations
+* **2014:** Java 8 – Streams, Lambdas, Date/Time API
+* **2017:** Java 9 – Modules
+* **2021:** Java 17 – Sealed classes, Pattern matching
+* **2023:** Java 21 – Virtual threads, Switch pattern matching
 
 ---
 
-## Installation & Setup
+## Java Platform Comparison
 
-### Prerequisites
+| Edition     | Purpose                   | Use Cases                         |
+| ----------- | ------------------------- | --------------------------------- |
+| **Java ME** | Mobile/embedded edition   | Feature phones, IoT               |
+| **Java SE** | Core Java libraries & JVM | Desktop & CLI apps                |
+| **Java EE** | Enterprise APIs           | Web services, Jakarta EE backends |
 
-* Java 11 or newer installed
-* Command-line (Command Prompt / PowerShell on Windows, Terminal on macOS/Linux) or an IDE (Eclipse / IntelliJ)
+---
 
-### Quick steps (command-line)
+## Java Architecture
 
-1. Open a terminal and navigate to the project root (where `Main.java` is).
-2. Compile:
+* **JDK** – Compiler, tools, runtime for development
+* **JRE** – JVM + libraries to run applications
+* **JVM** – Executes bytecode, handles memory, enables platform independence
+
+---
+
+## Mapping Syllabus → Implementation
+
+| Topic                 | Where Implemented                                                 |
+| --------------------- | ----------------------------------------------------------------- |
+| Encapsulation         | All domain classes with private fields + getters/setters          |
+| Inheritance           | `Person.java` → `Student.java`, `Instructor.java`                 |
+| Abstraction           | `Person.java` (abstract), `Searchable.java` interface             |
+| Polymorphism          | `getDisplayInfo()` overridden in Student/Instructor               |
+| Exceptions            | `DuplicateEnrollmentException`, `MaxCreditLimitExceededException` |
+| Collections & Streams | Stream API in `StudentService.java`, `ReportGenerator.java`       |
+| File I/O              | `ImportExportService.java` (NIO.2 Path & Files APIs)              |
+| Generics              | `Searchable<T>` interface                                         |
+| Date/Time API         | `LocalDate` fields in `Enrollment.java`                           |
+| Design Patterns       | Singleton (`AppConfig.java`), Builder (`Course.java`)             |
+
+---
+
+## Installation on Windows
+
+1. Download JDK from [Oracle](https://www.oracle.com/java/technologies/downloads/) or [Adoptium](https://adoptium.net/)
+2. Install JDK and set `JAVA_HOME`
+3. Add `%JAVA_HOME%\bin` to PATH
+4. Verify installation:
 
 ```bash
-# Example: compile all java files and place classes into out/
-find . -name "*.java" > sources.txt
-javac -d out @sources.txt
+java -version
+javac -version
 ```
 
-3. Run:
-
-```bash
-java -cp out Main
-```
-
-> If `find` is not available (Windows), compile within your IDE or use explicit `javac` commands per package.
-
-### Running in an IDE (Eclipse / IntelliJ)
-
-1. Create a new Java project and import the repository folder (or create a project and copy sources).
-2. Ensure the Java SDK is set to 11+.
-3. Mark source folders (e.g., the `edu` package root) as source roots if necessary.
-4. Run `Main.java` as a Java application.
-
----
-
-## How to Use (CLI flow)
-
-Typical user flow after starting the application:
-
-1. Application loads configuration and reads CSV sample data (if present).
-2. Use the menu to:
-
-   * Add / Edit / Deactivate students
-   * Add / Search / Update courses
-   * Enroll / Unenroll students (with validations)
-   * Record grades and generate transcripts
-   * Export data to CSV and create timestamped backups
-   * Generate reports (GPA distribution, top students, enrollment stats)
-
----
-
-## Data Files
-
-* `Student Management System/data/students.csv` — sample student data
-* `Student Management System/data/courses.csv` — sample course data
-
-You may import/export CSV files using the application's import/export facility.
+5. Install Eclipse or IntelliJ and import the project
+6. Run `Main.java`
 
 ---
 
 ## Screenshots
 
-Screenshots are included in the repository under `screenshots/`. Relative paths are used here so they render correctly on GitHub.
+### 1. Java Installation Verification
 
-Project file structure screenshot:
+![java-check](screenshots/java_check.png)
 
-![Project structure](screenshots/file_struct.png)
+### 2. Main Menu
 
-Java version check / environment verification:
+![menu](screenshots/menu.png)
 
-![Java verification](screenshots/java_check.png)
+### 3. Project File Structure
 
-Application menu:
+![file-struct](screenshots/file_struct.png)
 
-![Main menu](screenshots/menu.png)
+### 4. Menu Testing
 
-Menu testing / runtime example:
+![menu-testing](screenshots/menu_testing.png)
 
-![Menu testing](screenshots/menu_testing.png)
-
----
-
-## Mapping to Course / Syllabus Topics
-
-* **OOP Principles**: Encapsulation, Inheritance, Abstraction, Polymorphism — implemented across domain classes.
-* **Design Patterns**: Singleton (e.g., `AppConfig`), Builder (e.g., `Course.Builder`).
-* **Exception Handling**: Custom exceptions for business rules (duplicate enrollments, credit limits).
-* **Collections & Streams**: Stream API and lambda expressions for filtering, grouping and statistical reports.
-* **File I/O**: NIO.2 (`Path`, `Files`) for CSV I/O and backups.
-* **Date/Time API**: `java.time.LocalDate` and related classes for dates.
-* **Generics & Type Safety**: Generic interfaces for reusable components.
-* **Enums**: Grade / Semester definitions.
-
----
+<h3 align="center">Thank you for exploring this project! Contributions and feedback are welcome.</h3>
